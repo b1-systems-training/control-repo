@@ -11,6 +11,7 @@ mod 'ghoneycutt/ssh',         '3.49.0'
 mod 'ghoneycutt/common',      '1.6.0'
 mod 'puppetlabs/firewall',    '1.8.1'
 mod 'puppetlabs/java',        '1.6.0'
+mod 'saz/ntp',                '2.3.2'
 
 # Modules from Git
 # Examples: https://github.com/puppetlabs/r10k/blob/master/doc/puppetfile.mkd#examples
