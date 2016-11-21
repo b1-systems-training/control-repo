@@ -1,13 +1,15 @@
 # Class: profile::tomcat
 # deploy tomcat according to company policy
 class profile::tomcat(
-  $app_name      = 'sample.war',
-  $app_url       = '/vagrant/files/sample.war',
-  $catalina_base = '/opt/tomcat',
+  $app_name       = 'sample.war',
+  $app_url        = '/vagrant/files/sample.war',
+  $catalina_base  = '/opt/tomcat',
+  $tomcat_package = 'tomcat',
 
 ) {
   contain ::apache
   contain ::java
+  contain ::tomcat
   apache::balancer { 'puppet00': }
 
   apache::balancermember { "${::fqdn}-puppet00":
@@ -17,6 +19,7 @@ class profile::tomcat(
   }
   tomcat::install { $catalina_base:
     install_from_source => false,
+    package_name        => $tomcat_package,
   }
   tomcat::instance { 'default':
       catalina_home => $catalina_base,
