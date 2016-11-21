@@ -1,23 +1,38 @@
 # Class: profile::tomcat
 # deploy tomcat according to company policy
 class profile::tomcat(
-  $app_name       = 'sample.war',
-  $app_url        = '/vagrant/files/puppet/sample.war',
-  $catalina_base  = '/var/lib/tomcat',
-  $tomcat_package = 'tomcat',
-  $tomcat_service = 'tomcat',
+  $proxy_vhost_name = 'tomcat',
+  $proxy_port       = '80',
+  $proxy_path       = '/sample',
+  $proxy_pass       = 'ajp://localhost:8009/sample',
+  $docroot          = '/var/www/html',
+  $app_name         = 'sample.war',
+  $app_url          = '/vagrant/files/puppet/sample.war',
+  $catalina_base    = '/var/lib/tomcat',
+  $tomcat_package   = 'tomcat',
+  $tomcat_service   = 'tomcat',
 
 ) {
-  contain ::apache
+
+  class{'::apache':
+    default_vhost => false,
+  }
+  contain ::apache::mod::proxy_ajp
   contain ::java
   contain ::tomcat
-  apache::balancer { 'puppet00': }
 
-  apache::balancermember { "${::fqdn}-puppet00":
-    balancer_cluster => 'puppet00',
-    url              => "ajp://${::fqdn}:8009",
-    options          => ['ping=5', 'disablereuse=on', 'retry=5', 'ttl=120'],
+  apache::vhost{$proxy_vhost_name:
+    port       => $proxy_port,
+    docroot    => $docroot,
+    proxy_pass => [
+                    { 
+                      'path' => $proxy_path,
+                      'url'  => $proxy_pass,
+                    },
+                  ],
   }
+    
+    
 
   tomcat::instance { 'default':
     catalina_home       => $catalina_base,
