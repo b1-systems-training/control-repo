@@ -1,5 +1,5 @@
 # Cheap demo to show off windows-specific modules
-class windemo {
+class profile::windemo {
   # Useless? I don't think so!!1
   dism{'TelnetClient':
     ensure    => present,
