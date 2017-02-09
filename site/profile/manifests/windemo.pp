@@ -33,4 +33,31 @@ class profile::windemo {
   ]
 
   ensure_packages($packages, { 'notify' => Reboot['after_initial_installation'] })
+
+  # Some random registry resource, ripped from the registry modules'
+  # README
+
+  # Create a registry key
+  registry_key { 'HKLM\System\CurrentControlSet\Services\Puppet':
+    ensure => present,
+  }
+  # Create a registry value in a preexisting key
+  registry_value { 'HKLM\System\CurrentControlSet\Services\Puppet\Description':
+    ensure => present,
+    type   => string,
+    data   => "The Puppet Agent service periodically manages your configuration",
+  }
+
+  # Manage registry value and parent key in one go 
+  #registry::value { 'puppetmaster':
+  #  key  => 'HKLM\Software\Vendor\PuppetLabs',
+  #  data => 'puppet.puppetlabs.com',
+  #}
+
+  ## Set a default value
+  #registry::value { 'Setting0':
+  #  key   => 'HKLM\System\CurrentControlSet\Services\Puppet',
+  #  value => '(default)',
+  #  data  => "Hello World!",
+  #}
 }
