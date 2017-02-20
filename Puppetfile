@@ -5,14 +5,14 @@ forge "http://forge.puppetlabs.com"
 mod 'puppetlabs/inifile',     '1.6.0'
 mod 'puppetlabs/stdlib',      '4.13.1'
 mod 'puppetlabs/concat',      '2.2.0'
-mod 'puppetlabs/apache',      '1.10.0'
-mod 'puppetlabs/tomcat',      '1.6.0'
+mod 'puppetlabs/apache',      '1.11.0'
+mod 'puppetlabs/tomcat',      '1.6.1'
 mod 'ghoneycutt/ssh',         '3.49.0'
 mod 'ghoneycutt/common',      '1.6.0'
-mod 'puppetlabs/firewall',    '1.8.1'
+mod 'puppetlabs/firewall',    '1.8.2'
 mod 'puppetlabs/java',        '1.6.0'
 mod 'puppetlabs/ntp',         '6.0.0'
-mod 'puppet/staging',         '2.0.1'
+mod 'puppet/staging',         '2.2.0'
 
 ## Some windows specific modules
 mod 'badgerious/windows_env'
