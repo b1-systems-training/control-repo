@@ -28,13 +28,13 @@ File { backup => false }
 node default {
   # This logic will fetch a list of classes from hiera and include it here
   # so puppet uses them for catalog compilation
-  # $classification = lookup({'name' => 'classification',
-  #           'merge' => {
-  #             'strategy' => 'deep',
-  #             'knockout_prefix' => '--',
-  #             'sort_merge_arrays' => true
-  #           }
-  # })
-    
-  #  $classification['classes'].include
+  $classification = lookup({'name' => 'classification',
+            'merge' => {
+              'strategy' => 'deep',
+              'knockout_prefix' => '--',
+              'sort_merge_arrays' => true
+            }
+  })
+  
+   $classification['classes'].include
 }

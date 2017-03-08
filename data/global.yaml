@@ -2,7 +2,7 @@
 foo: 'bar'
 # This may be used to configure classes for nodes
 # from hiera (hiera 3/puppet 4) specific
-#classification:
-#  classes:
-#    - role::base
+classification:
+  classes:
+    - role::base
 
