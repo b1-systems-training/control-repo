@@ -37,4 +37,6 @@ node default {
   })
   
    $classification['classes'].include
+   $keineahnung = lookup({'name' => 'keineahnung'})
+   notify{"Christian sagt: $keineahnung":}
 }
