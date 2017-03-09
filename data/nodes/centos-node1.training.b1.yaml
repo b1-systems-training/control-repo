@@ -1,0 +1,4 @@
+---
+ntp::servers:
+  - time.apple.de
+  - de.pool.ntp.org
