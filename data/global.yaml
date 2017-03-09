@@ -1,5 +1,7 @@
 ---
 foo: 'bar'
+ntp::servers:
+  - time.microsoft.com
 # This may be used to configure classes for nodes
 # from hiera (hiera 3/puppet 4) specific
 classification:
