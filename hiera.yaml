@@ -1,5 +1,7 @@
 ---
 # this should be part of your controlrepo: hiera.yaml
+# Install eyaml backend for a new puppetserver, use:
+# puppetserver gem install hiera-eyaml
 version: 5
 defaults:
   datadir: data
