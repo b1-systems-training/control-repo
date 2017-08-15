@@ -32,7 +32,7 @@ node default {
             'merge' => {
               'strategy' => 'deep',
               'knockout_prefix' => '--',
-              'sort_merge_arrays' => true
+              'sort_merged_arrays' => true
             }
   })
   
