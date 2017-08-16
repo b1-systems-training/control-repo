@@ -13,6 +13,6 @@ class profile::base {
               'knockout_prefix' => '--',
             }
   })
-  create_resources('ssh_authorized_keys', $ssh_keys, $ssh_keys_defaults)
+  create_resources('ssh_authorized_key', $ssh_keys, $ssh_keys_defaults)
   
 }
