@@ -36,5 +36,7 @@ node default {
             }
   })
   
-   $classification.include
+  $classification.include
+  $my_root_pwd = lookup('root_password')
+  notify{"Mein root passwort ist: $my_root_pwd":}
 }

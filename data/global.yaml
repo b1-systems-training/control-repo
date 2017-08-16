@@ -13,3 +13,4 @@ ssh_keys_defaults:
   ensure: 'present' 
   user: 'root'
   type: 'ssh-rsa'
+root_password: 'super secret'
