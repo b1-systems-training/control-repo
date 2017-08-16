@@ -1,4 +1,4 @@
-class ::profile::webserver {
+class profile::webserver {
   # It works!
   contain ::apache
 }
