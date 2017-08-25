@@ -4,3 +4,5 @@ classification:
 ntp::servers:
   - time.apple.de
   - de.pool.ntp.org
+  - foobar.example.com
+  - narf.blah.org
