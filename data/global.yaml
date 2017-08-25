@@ -1,4 +1,7 @@
 ---
+myntp::servers:
+  - foobar.narf.com
+  - nocheindefault.ntp.org
 foo: 'bar'
 ntp::servers:
   - time.microsoft.com

@@ -1,0 +1,4 @@
+<%-| Array $ntp_servers |-%>
+<% $ntp_servers.each |String $server| { -%>
+server <%= $server %>
+<% } -%>
