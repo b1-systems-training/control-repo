@@ -1,6 +1,6 @@
 ---
 classification:
-  - ::profiles::webserver
+  - profile::webserver
 ntp::servers:
   - time.apple.de
   - de.pool.ntp.org
