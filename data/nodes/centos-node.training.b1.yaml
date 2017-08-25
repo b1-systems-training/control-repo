@@ -6,3 +6,5 @@ ntp::servers:
   - de.pool.ntp.org
   - foobar.example.com
   - narf.blah.org
+myntp::servers:
+  - ganzbesonders.example.com
