@@ -13,6 +13,7 @@ mod 'puppetlabs/java', '2.1.0'
 mod 'puppetlabs/ntp', '6.2.0'
 mod 'puppetlabs/stdlib', '4.17.1'
 mod 'puppetlabs/tomcat', '1.2.0'
+mod 'puppetlabs/mysql'
 # Discovered elements from existing Puppetfile
 # Modules from the Puppet Forge
 # Versions should be updated to be the latest at the time you start
