@@ -27,7 +27,7 @@ File { backup => false }
 
 node default {
   notify{'Das kommt aus dem Puppet Env dresden! Whoop Whoop':}
-  class{'mysql':}
+  class{'mysql::server':}
   # This logic will fetch a list of classes from hiera and include it here
   # so puppet uses them for catalog compilation
   $classification = lookup({'name' => 'classification',
